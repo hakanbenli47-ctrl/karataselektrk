@@ -775,27 +775,27 @@ export default function Home() {
         </div>
       </footer>
 
-      <div className="fixed bottom-4 left-4 right-4 z-50 grid grid-cols-2 gap-3 sm:left-auto sm:right-6 sm:w-[390px]">
-        <a
-          href={`tel:${phoneTel}`}
-          className="flex items-center justify-center gap-2 bg-[#17130f] px-4 py-4 text-center text-sm font-black text-white shadow-2xl shadow-black/25 transition hover:bg-[#f5b335] hover:text-[#17130f]"
-        >
-          <Phone size={18} />
-          Ara
-        </a>
+   <div className="fixed bottom-4 left-4 right-4 z-50 grid grid-cols-2 gap-3 sm:left-auto sm:right-6 sm:w-[390px]">
+  <a
+    href={`tel:${phoneTel}`}
+    className="flex items-center justify-center gap-2 bg-[#f5b335] px-4 py-4 text-center text-sm font-black text-[#17130f] shadow-2xl shadow-black/25 transition hover:bg-white"
+  >
+    <Phone size={18} className="text-[#17130f]" />
+    <span className="text-[#17130f]">Ara</span>
+  </a>
 
-        <a
-          href={wpLink(
-            "Merhaba, Karataş Elektrik Elektronik web sitesinden yazıyorum. Hizmetleriniz hakkında bilgi almak istiyorum."
-          )}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 bg-[#25d366] px-4 py-4 text-center text-sm font-black text-white shadow-2xl shadow-black/25 transition hover:bg-[#1ebe5b]"
-        >
-          <MessageCircle size={18} />
-          WhatsApp
-        </a>
-      </div>
+  <a
+    href={wpLink(
+      "Merhaba, Karataş Elektrik Elektronik web sitesinden yazıyorum. Hizmetleriniz hakkında bilgi almak istiyorum."
+    )}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center justify-center gap-2 bg-[#25d366] px-4 py-4 text-center text-sm font-black text-white shadow-2xl shadow-black/25 transition hover:bg-[#1ebe5b]"
+  >
+    <MessageCircle size={18} className="text-white" />
+    <span className="text-white">WhatsApp</span>
+  </a>
+</div>
     </main>
   );
 }
