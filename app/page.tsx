@@ -163,8 +163,8 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <main className="min-h-screen bg-[#f4f1ea] text-[#17130f]">
-      <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/15 bg-[#14100c]/88 text-white backdrop-blur-xl">
+    <main className="min-h-screen bg-[#f4f1ea] pb-24 text-[#17130f] sm:pb-0">
+      <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/15 bg-[#14100c]/92 text-white backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8 lg:px-12">
           <a href="#" className="flex items-center gap-3">
             <div className="flex h-11 w-11 items-center justify-center bg-[#f5b335] text-xl font-black text-[#17130f]">
@@ -172,7 +172,7 @@ export default function Home() {
             </div>
 
             <div>
-              <p className="text-base font-black tracking-[0.18em]">
+              <p className="text-base font-black tracking-[0.18em] text-white">
                 KARATAŞ
               </p>
               <p className="text-[11px] font-bold tracking-[0.24em] text-[#f5b335]">
@@ -181,7 +181,7 @@ export default function Home() {
             </div>
           </a>
 
-          <nav className="hidden items-center gap-7 text-[13px] font-black uppercase tracking-[0.12em] text-white/78 lg:flex">
+          <nav className="hidden items-center gap-7 text-[13px] font-black uppercase tracking-[0.12em] text-white/80 lg:flex">
             {navLinks.map((item) => (
               <a
                 key={item.href}
@@ -196,10 +196,10 @@ export default function Home() {
           <div className="hidden items-center gap-3 lg:flex">
             <a
               href={`tel:${phoneTel}`}
-              className="inline-flex items-center gap-2 bg-white px-5 py-3 text-sm font-black text-[#17130f] transition hover:bg-[#f5b335]"
+              className="inline-flex items-center justify-center gap-2 bg-[#f5b335] px-5 py-3 text-sm font-black text-[#17130f] shadow-lg shadow-black/10 transition hover:bg-white"
             >
-              <Phone size={17} />
-              Hemen Ara
+              <Phone size={17} className="text-[#17130f]" />
+              <span className="text-[#17130f]">Hemen Ara</span>
             </a>
 
             <a
@@ -208,17 +208,17 @@ export default function Home() {
               )}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#25d366] px-5 py-3 text-sm font-black text-white transition hover:bg-[#1ebe5b]"
+              className="inline-flex items-center justify-center gap-2 bg-[#25d366] px-5 py-3 text-sm font-black text-white shadow-lg shadow-black/10 transition hover:bg-[#1ebe5b]"
             >
-              <MessageCircle size={17} />
-              WhatsApp
+              <MessageCircle size={17} className="text-white" />
+              <span className="text-white">WhatsApp</span>
             </a>
           </div>
 
           <button
             type="button"
             onClick={() => setMobileMenuOpen((prev) => !prev)}
-            className="flex h-11 w-11 items-center justify-center border border-white/20 text-white lg:hidden"
+            className="flex h-11 w-11 items-center justify-center border border-white/30 bg-white/10 text-white lg:hidden"
             aria-label="Menüyü aç"
           >
             {mobileMenuOpen ? <X size={23} /> : <Menu size={23} />}
@@ -238,7 +238,7 @@ export default function Home() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="py-3 text-sm font-black uppercase tracking-[0.12em] text-white/80"
+                  className="py-3 text-sm font-black uppercase tracking-[0.12em] text-white"
                 >
                   {item.label}
                 </a>
@@ -248,10 +248,10 @@ export default function Home() {
             <div className="grid grid-cols-2 gap-3">
               <a
                 href={`tel:${phoneTel}`}
-                className="flex items-center justify-center gap-2 bg-white px-4 py-3 text-sm font-black text-[#17130f]"
+                className="flex items-center justify-center gap-2 bg-[#f5b335] px-4 py-3 text-sm font-black text-[#17130f]"
               >
-                <Phone size={17} />
-                Ara
+                <Phone size={17} className="text-[#17130f]" />
+                <span className="text-[#17130f]">Ara</span>
               </a>
 
               <a
@@ -262,8 +262,8 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 bg-[#25d366] px-4 py-3 text-sm font-black text-white"
               >
-                <MessageCircle size={17} />
-                WhatsApp
+                <MessageCircle size={17} className="text-white" />
+                <span className="text-white">WhatsApp</span>
               </a>
             </div>
           </motion.div>
@@ -289,15 +289,17 @@ export default function Home() {
             transition={{ duration: 0.65 }}
           >
             <p className="mb-5 inline-flex items-center gap-2 bg-[#f5b335] px-4 py-2 text-sm font-black uppercase tracking-[0.16em] text-[#17130f]">
-              <Zap size={17} />
-              En yakın elektrikçi desteği
+              <Zap size={17} className="text-[#17130f]" />
+              <span className="text-[#17130f]">
+                En yakın elektrikçi desteği
+              </span>
             </p>
 
-            <h1 className="max-w-4xl text-5xl font-black leading-[0.96] tracking-[-0.055em] sm:text-7xl lg:text-8xl">
+            <h1 className="max-w-4xl text-5xl font-black leading-[0.96] tracking-[-0.055em] text-white sm:text-7xl lg:text-8xl">
               Elektrik arızası, kamera ve tesisat işlerinde hızlı çözüm.
             </h1>
 
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/76 sm:text-xl">
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/80 sm:text-xl">
               Karataş Elektrik Elektronik; Sultangazi ve çevresinde elektrik
               arıza, pano, kamera sistemi, alarm, aydınlatma ve kablo tesisatı
               için yerinde keşif ve profesyonel uygulama sunar.
@@ -306,13 +308,13 @@ export default function Home() {
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
                 href={`tel:${phoneTel}`}
-                className="group inline-flex items-center justify-center gap-2 bg-[#f5b335] px-8 py-5 text-base font-black text-[#17130f] transition hover:bg-white"
+                className="group inline-flex items-center justify-center gap-2 bg-[#f5b335] px-8 py-5 text-base font-black text-[#17130f] shadow-xl shadow-black/20 transition hover:bg-white"
               >
-                <Phone size={21} />
-                Hemen Ara
+                <Phone size={21} className="text-[#17130f]" />
+                <span className="text-[#17130f]">Hemen Ara</span>
                 <ArrowRight
                   size={18}
-                  className="transition group-hover:translate-x-1"
+                  className="text-[#17130f] transition group-hover:translate-x-1"
                 />
               </a>
 
@@ -322,18 +324,18 @@ export default function Home() {
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-[#25d366] px-8 py-5 text-base font-black text-white transition hover:bg-[#1ebe5b]"
+                className="inline-flex items-center justify-center gap-2 bg-[#25d366] px-8 py-5 text-base font-black text-white shadow-xl shadow-black/20 transition hover:bg-[#1ebe5b]"
               >
-                <MessageCircle size={21} />
-                WhatsApp’tan Yaz
+                <MessageCircle size={21} className="text-white" />
+                <span className="text-white">WhatsApp’tan Yaz</span>
               </a>
             </div>
 
-            <div className="mt-10 grid gap-3 text-sm font-bold text-white/82 sm:grid-cols-2">
+            <div className="mt-10 grid gap-3 text-sm font-bold text-white sm:grid-cols-2">
               {quickItems.map((item) => (
                 <div key={item} className="flex items-center gap-3">
                   <CheckCircle2 className="text-[#f5b335]" size={20} />
-                  <span>{item}</span>
+                  <span className="text-white/90">{item}</span>
                 </div>
               ))}
             </div>
@@ -391,10 +393,12 @@ export default function Home() {
               )}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#17130f] px-6 py-4 font-black text-white transition hover:bg-[#f5b335] hover:text-[#17130f]"
+              className="inline-flex items-center justify-center gap-2 bg-[#17130f] px-6 py-4 font-black text-white shadow-lg shadow-black/10 transition hover:bg-[#f5b335]"
             >
-              Bilgi Al
-              <ChevronRight size={20} />
+              <span className="text-white group-hover:text-[#17130f]">
+                Bilgi Al
+              </span>
+              <ChevronRight size={20} className="text-white" />
             </a>
           </motion.div>
 
@@ -420,14 +424,14 @@ export default function Home() {
                   alt={item.title}
                   className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/78 via-black/15 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/82 via-black/25 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <p className="text-2xl font-black tracking-[-0.02em] text-white">
                     {item.title}
                   </p>
                   <p className="mt-2 inline-flex items-center gap-2 text-sm font-black text-[#f5b335]">
                     Detaylı bilgi al
-                    <ArrowRight size={16} />
+                    <ArrowRight size={16} className="text-[#f5b335]" />
                   </p>
                 </div>
               </motion.a>
@@ -442,7 +446,7 @@ export default function Home() {
             <p className="text-sm font-black uppercase tracking-[0.28em] text-[#f5b335]">
               Hizmetlerimiz
             </p>
-            <h2 className="mt-4 text-4xl font-black tracking-[-0.045em] sm:text-6xl">
+            <h2 className="mt-4 text-4xl font-black tracking-[-0.045em] text-white sm:text-6xl">
               Arıza, bakım, montaj ve güvenlik sistemleri için tek noktadan
               çözüm.
             </h2>
@@ -470,9 +474,9 @@ export default function Home() {
                       alt={service.title}
                       className="h-full w-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
                     <div className="absolute bottom-6 left-6 flex h-16 w-16 items-center justify-center bg-[#f5b335] text-[#17130f]">
-                      <Icon size={32} />
+                      <Icon size={32} className="text-[#17130f]" />
                     </div>
                   </div>
 
@@ -481,11 +485,11 @@ export default function Home() {
                       0{index + 1}
                     </p>
 
-                    <h3 className="text-4xl font-black tracking-[-0.04em] sm:text-5xl">
+                    <h3 className="text-4xl font-black tracking-[-0.04em] text-white sm:text-5xl">
                       {service.title}
                     </h3>
 
-                    <p className="mt-5 max-w-2xl text-lg leading-8 text-white/72">
+                    <p className="mt-5 max-w-2xl text-lg leading-8 text-white/76">
                       {service.desc}
                     </p>
 
@@ -494,18 +498,18 @@ export default function Home() {
                         href={wpLink(service.message)}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 bg-[#25d366] px-7 py-4 font-black text-white transition hover:bg-[#1ebe5b]"
+                        className="inline-flex items-center justify-center gap-2 bg-[#25d366] px-7 py-4 font-black text-white shadow-lg shadow-black/20 transition hover:bg-[#1ebe5b]"
                       >
-                        <MessageCircle size={19} />
-                        WhatsApp’tan Bilgi Al
+                        <MessageCircle size={19} className="text-white" />
+                        <span className="text-white">WhatsApp’tan Bilgi Al</span>
                       </a>
 
                       <a
                         href={`tel:${phoneTel}`}
-                        className="inline-flex items-center justify-center gap-2 bg-white px-7 py-4 font-black text-[#17130f] transition hover:bg-[#f5b335]"
+                        className="inline-flex items-center justify-center gap-2 bg-[#f5b335] px-7 py-4 font-black text-[#17130f] shadow-lg shadow-black/20 transition hover:bg-white"
                       >
-                        <Phone size={19} />
-                        Hemen Ara
+                        <Phone size={19} className="text-[#17130f]" />
+                        <span className="text-[#17130f]">Hemen Ara</span>
                       </a>
                     </div>
                   </div>
@@ -529,12 +533,12 @@ export default function Home() {
             <p className="text-sm font-black uppercase tracking-[0.28em] text-[#f5b335]">
               Neden Karataş?
             </p>
-            <h2 className="mt-4 text-4xl font-black tracking-[-0.045em] sm:text-6xl">
+            <h2 className="mt-4 text-4xl font-black tracking-[-0.045em] text-white sm:text-6xl">
               Sorunu büyümeden çözen, temiz ve güvenilir işçilik.
             </h2>
           </div>
 
-          <div className="grid gap-8 text-white/80 sm:grid-cols-2">
+          <div className="grid gap-8 text-white/82 sm:grid-cols-2">
             {[
               {
                 icon: Clock3,
@@ -565,7 +569,7 @@ export default function Home() {
                   <h3 className="text-2xl font-black text-white">
                     {item.title}
                   </h3>
-                  <p className="mt-3 leading-7">{item.text}</p>
+                  <p className="mt-3 leading-7 text-white/78">{item.text}</p>
                 </div>
               );
             })}
@@ -594,20 +598,20 @@ export default function Home() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
                   href={`tel:${phoneTel}`}
-                  className="inline-flex items-center justify-center gap-2 bg-[#17130f] px-7 py-4 font-black text-white transition hover:bg-[#f5b335] hover:text-[#17130f]"
+                  className="inline-flex items-center justify-center gap-2 bg-[#17130f] px-7 py-4 font-black text-white shadow-lg shadow-black/10 transition hover:bg-[#f5b335]"
                 >
-                  <Phone size={19} />
-                  {phoneRaw}
+                  <Phone size={19} className="text-white" />
+                  <span className="text-white">{phoneRaw}</span>
                 </a>
 
                 <a
                   href={mapsLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-[#f5b335] px-7 py-4 font-black text-[#17130f] transition hover:bg-white"
+                  className="inline-flex items-center justify-center gap-2 bg-[#f5b335] px-7 py-4 font-black text-[#17130f] shadow-lg shadow-black/10 transition hover:bg-white"
                 >
-                  <MapPin size={19} />
-                  Konuma Git
+                  <MapPin size={19} className="text-[#17130f]" />
+                  <span className="text-[#17130f]">Konuma Git</span>
                 </a>
               </div>
             </div>
@@ -625,7 +629,7 @@ export default function Home() {
                   {areas.map((area) => (
                     <span
                       key={area}
-                      className="bg-white/92 px-4 py-2 text-sm font-black text-[#17130f] backdrop-blur"
+                      className="bg-white px-4 py-2 text-sm font-black text-[#17130f] shadow-lg shadow-black/10"
                     >
                       {area}
                     </span>
@@ -637,7 +641,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="iletisim" className="relative overflow-hidden bg-[#17130f] text-white">
+      <section
+        id="iletisim"
+        className="relative overflow-hidden bg-[#17130f] pb-10 text-white sm:pb-0"
+      >
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1565608438257-fac3c27beb36?auto=format&fit=crop&w=1800&q=85"
@@ -653,11 +660,11 @@ export default function Home() {
               İletişim
             </p>
 
-            <h2 className="mt-4 max-w-4xl text-4xl font-black tracking-[-0.045em] sm:text-6xl">
+            <h2 className="mt-4 max-w-4xl text-4xl font-black tracking-[-0.045em] text-white sm:text-6xl">
               Elektrik arızası veya sistem kurulumu için hemen ulaşın.
             </h2>
 
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-white/72">
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-white/76">
               Kamera, elektrik tesisatı, pano, alarm, aydınlatma ve kablo
               uygulamaları için telefonla arayabilir veya WhatsApp üzerinden
               hazır mesajla destek talep edebilirsiniz.
@@ -666,17 +673,17 @@ export default function Home() {
             <div className="mt-9 grid gap-4 sm:grid-cols-2">
               <a
                 href={`tel:${phoneTel}`}
-                className="group flex min-h-[170px] flex-col justify-between bg-[#f5b335] p-7 text-[#17130f] transition hover:bg-white"
+                className="group flex min-h-[170px] flex-col justify-between bg-[#f5b335] p-7 text-[#17130f] shadow-xl shadow-black/20 transition hover:bg-white"
               >
-                <Phone size={34} />
-                <span className="text-3xl font-black tracking-[-0.03em]">
+                <Phone size={34} className="text-[#17130f]" />
+                <span className="text-3xl font-black tracking-[-0.03em] text-[#17130f]">
                   {phoneRaw}
                 </span>
-                <span className="inline-flex items-center gap-2 text-sm font-black uppercase tracking-[0.12em]">
+                <span className="inline-flex items-center gap-2 text-sm font-black uppercase tracking-[0.12em] text-[#17130f]">
                   Hemen ara
                   <ArrowRight
                     size={17}
-                    className="transition group-hover:translate-x-1"
+                    className="text-[#17130f] transition group-hover:translate-x-1"
                   />
                 </span>
               </a>
@@ -687,17 +694,17 @@ export default function Home() {
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex min-h-[170px] flex-col justify-between bg-[#25d366] p-7 text-white transition hover:bg-[#1ebe5b]"
+                className="group flex min-h-[170px] flex-col justify-between bg-[#25d366] p-7 text-white shadow-xl shadow-black/20 transition hover:bg-[#1ebe5b]"
               >
-                <MessageCircle size={34} />
-                <span className="text-3xl font-black tracking-[-0.03em]">
+                <MessageCircle size={34} className="text-white" />
+                <span className="text-3xl font-black tracking-[-0.03em] text-white">
                   WhatsApp
                 </span>
-                <span className="inline-flex items-center gap-2 text-sm font-black uppercase tracking-[0.12em]">
+                <span className="inline-flex items-center gap-2 text-sm font-black uppercase tracking-[0.12em] text-white">
                   Mesaj gönder
                   <ArrowRight
                     size={17}
-                    className="transition group-hover:translate-x-1"
+                    className="text-white transition group-hover:translate-x-1"
                   />
                 </span>
               </a>
@@ -707,11 +714,13 @@ export default function Home() {
               href={mapsLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 flex items-start gap-4 bg-white p-7 text-[#17130f] transition hover:bg-[#f5b335]"
+              className="mt-4 flex items-start gap-4 bg-white p-7 text-[#17130f] shadow-xl shadow-black/20 transition hover:bg-[#f5b335]"
             >
-              <MapPin className="mt-1" size={28} />
+              <MapPin className="mt-1 text-[#17130f]" size={28} />
               <span>
-                <strong className="block text-xl font-black">Konuma Git</strong>
+                <strong className="block text-xl font-black text-[#17130f]">
+                  Konuma Git
+                </strong>
                 <span className="mt-2 block leading-7 text-[#51483e]">
                   {address}
                 </span>
@@ -740,11 +749,16 @@ export default function Home() {
               const Icon = item.icon;
 
               return (
-                <div key={item.title} className="flex gap-5 border-b border-white/16 pb-7">
+                <div
+                  key={item.title}
+                  className="flex gap-5 border-b border-white/16 pb-7"
+                >
                   <Icon className="mt-1 shrink-0 text-[#f5b335]" size={34} />
                   <div>
-                    <h3 className="text-2xl font-black">{item.title}</h3>
-                    <p className="mt-2 leading-7 text-white/70">{item.text}</p>
+                    <h3 className="text-2xl font-black text-white">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 leading-7 text-white/74">{item.text}</p>
                   </div>
                 </div>
               );
@@ -754,20 +768,23 @@ export default function Home() {
       </section>
 
       <footer className="bg-[#100d0a] px-5 py-8 text-white sm:px-8 lg:px-12">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-white/62 md:flex-row md:items-center md:justify-between">
-          <p className="font-bold">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-white/70 md:flex-row md:items-center md:justify-between">
+          <p className="font-bold text-white/70">
             © 2026 Karataş Elektrik Elektronik. Tüm hakları saklıdır.
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <a href={`tel:${phoneTel}`} className="hover:text-[#f5b335]">
+            <a
+              href={`tel:${phoneTel}`}
+              className="font-bold text-white/70 hover:text-[#f5b335]"
+            >
               {phoneRaw}
             </a>
             <a
               href={mapsLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#f5b335]"
+              className="font-bold text-white/70 hover:text-[#f5b335]"
             >
               Sultangazi / İstanbul
             </a>
@@ -775,27 +792,27 @@ export default function Home() {
         </div>
       </footer>
 
-   <div className="fixed bottom-4 left-4 right-4 z-50 grid grid-cols-2 gap-3 sm:left-auto sm:right-6 sm:w-[390px]">
-  <a
-    href={`tel:${phoneTel}`}
-    className="flex items-center justify-center gap-2 bg-[#f5b335] px-4 py-4 text-center text-sm font-black text-[#17130f] shadow-2xl shadow-black/25 transition hover:bg-white"
-  >
-    <Phone size={18} className="text-[#17130f]" />
-    <span className="text-[#17130f]">Ara</span>
-  </a>
+      <div className="fixed bottom-4 left-4 right-4 z-50 grid grid-cols-2 gap-3 sm:left-auto sm:right-6 sm:w-[390px]">
+        <a
+          href={`tel:${phoneTel}`}
+          className="flex items-center justify-center gap-2 bg-[#f5b335] px-4 py-4 text-center text-sm font-black text-[#17130f] shadow-2xl shadow-black/30 ring-1 ring-black/10 transition hover:bg-white"
+        >
+          <Phone size={18} className="text-[#17130f]" />
+          <span className="text-[#17130f]">Ara</span>
+        </a>
 
-  <a
-    href={wpLink(
-      "Merhaba, Karataş Elektrik Elektronik web sitesinden yazıyorum. Hizmetleriniz hakkında bilgi almak istiyorum."
-    )}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="flex items-center justify-center gap-2 bg-[#25d366] px-4 py-4 text-center text-sm font-black text-white shadow-2xl shadow-black/25 transition hover:bg-[#1ebe5b]"
-  >
-    <MessageCircle size={18} className="text-white" />
-    <span className="text-white">WhatsApp</span>
-  </a>
-</div>
+        <a
+          href={wpLink(
+            "Merhaba, Karataş Elektrik Elektronik web sitesinden yazıyorum. Hizmetleriniz hakkında bilgi almak istiyorum."
+          )}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 bg-[#25d366] px-4 py-4 text-center text-sm font-black text-white shadow-2xl shadow-black/30 ring-1 ring-white/20 transition hover:bg-[#1ebe5b]"
+        >
+          <MessageCircle size={18} className="text-white" />
+          <span className="text-white">WhatsApp</span>
+        </a>
+      </div>
     </main>
   );
 }
